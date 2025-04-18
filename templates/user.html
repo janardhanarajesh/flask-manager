@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            user info
+        </title>
+        <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    </head>
+    <body>
+        <center>
+        <div id="use">
+            <form action="/user" method="post">
+                <input type="text" placeholder="wesite name" name="wb" required/>
+                <br/>
+                <input type="url" placeholder="url" name="url" required/>
+                <br/>
+                <input type="password" placeholder="password" name="password" required/>
+                <br/>
+                <input type="text" placeholder="discription" name="disc" required/>
+                <br/>
+                <input type="submit">
+                <br/>
+                        </form>
+                        <br/>
+                       <a href="{{url_for('passes')}}">passwords</a> 
+        </div>
+        <script>
+            var msg="{{msg}}";
+            alert(msg)
+        </script>
+
+        </center>
+    </body>
+</html>

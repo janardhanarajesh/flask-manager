@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            update
+        </title>
+        <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    </head>
+    <body>
+        <center>
+        <div id="upu">
+                    <form action="/updat" method="post">
+            <input type="text"  placeholder="website" name="wb" required id="wb" readonly/>
+            <br/>
+            <input type="text"  placeholder="url" name="url" required id="url"/>
+<br/>
+<input type="text"  placeholder="password" name="pas" required id="pas"/>
+<br/>
+<input type="text"  placeholder="discription"  name="dis" required id="dis"/>
+
+<br/>
+<input type="submit" value="update"/>
+<br/>
+
+        </form>
+        </div>
+        </center>
+<script>
+x=document.getElementById("wb");
+localStorage.setItem("website","{{website}}")
+x.value=localStorage.getItem("website")
+y=document.getElementById("url");
+localStorage.setItem("url","{{url}}")
+y.value=localStorage.getItem("url")
+z=document.getElementById("pas");
+localStorage.setItem("password","{{password}}")
+z.value=localStorage.getItem("password")
+a=document.getElementById("dis");
+localStorage.setItem("discription","{{discription}}")
+a.value=localStorage.getItem("discription")
+let msg="{{msg}}"
+alert(msg)
+</script>
+
+    </body>
+</html>

@@ -1,0 +1,131 @@
+body{
+    background-color: white;
+}
+input{
+    height: 25px;
+    width: 50%;
+    margin-top: 15px;
+    text-align: center;
+}
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+#main{
+    height: 250px;
+    width: 40%;
+    border-radius: 10px;
+    background-color: black;
+    margin-top: 150px;
+    box-shadow: 2px 2px 2px white inset,2px 2px 2px white;
+}
+#main>form>input[type="submit"]{
+width: 50%;
+}
+#main>a{
+    color: white;
+}
+#menu{
+    height: 40px;
+    width: 100%;
+    background-color: black;
+    box-shadow: 1px 1px 1px black;
+}
+#submenu{
+    height: 40px;
+    width: 60%;
+}
+.m{
+    height: 40px;
+    width: 50%;
+    float: left;
+    font-size: 160%;
+}
+.m>a{
+    text-decoration: none;
+    color: white;
+    
+}
+.m>a:hover{
+    font-size: 140%;
+}
+#usermain{
+    height:200px;
+    width: 30%;
+    background-color: black;
+    box-shadow: 1px 1px 1px 1px black inset,1px 1px 1px 1px black ;
+    border-radius: 10px;
+    margin-top: 100px;
+}
+#usermain>form>input{
+    height: 25px;
+    width: 60%;
+    margin-top: 25px;
+    text-align: center;
+
+}
+#usermain>a{
+font-size: 100%;
+color: white;
+}
+#use{
+    margin-top: 140px;
+    height: 250px;
+    width: 40%;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px black inset,1px 1px 1px 1px black ;
+}
+#use>a{
+    text-decoration: none;
+    color: white;
+
+}
+#use>input{
+    text-align: center;
+}
+#passdiv{
+    height: 210px;
+    width: 50%;
+    background-color: black;
+    margin-top: 50px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px black inset,1px 1px 1px 1px black ;
+
+}
+#passdiv>input{
+    margin-top: 15px;
+    text-align: center;
+}
+#passdiv>.but{
+    margin-top: 10px;
+    width: 40%;
+    height: 30px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-size:70% ;
+}
+#upu{
+    height: 250px;
+    width: 45%;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px black,1px 1px 1px blak inset;
+    margin-top: 150px;
+}
+#upu>input{
+    text-align: center;
+    width: 50%;
+
+}
+#us{
+    height: 20px;
+    background-color: black;
+    color: white;
+    text-align: right;
+}
+#mains{
+    font-size: 1000%;
+}

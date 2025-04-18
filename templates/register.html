@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            passger
+        </title>
+        <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}"> 
+    </head>
+    <body>
+        <center>
+            <div id="main">
+        <form action="/submit" method="post">
+            <input type="text" placeholder="name" name="name" required/>
+            <br/>
+            <input type="text" placeholder="username" name="username" required/>
+            <br/>
+            <input type="email" placeholder="email" name="email"    required/>
+            <br/>
+            <input type="password" placeholder="password" name="pass"    required/>
+            <br/>
+            <input type="submit" value="register"/>
+
+        </form>
+        <br/>
+        <a href="{{url_for('login')}}">login ?</a>
+        </div>
+        </center>
+        <script>
+            var msg="{{msg}}"
+            alert(msg)
+        </script>
+    </body>
+</html>

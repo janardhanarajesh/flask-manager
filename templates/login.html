@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            login
+        </title>
+        <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}"> 
+    </head>
+    <body>
+        <center>
+                    <div id="usermain">
+        <form action="/check" method="post">
+            <input type="text" placeholder="username" name="uname" required/>
+            <br/>
+            <input type="password" placeholder="password" name="pass" required/>
+            <br/>
+            <input type="submit" value="login"/>
+            <br/>
+        </form>
+        <br/>
+
+        <a href="{{url_for('reg')}}">register ?</a>
+        </div>
+        </center>
+        <script>
+            var msg=""
+            var msg="{{msg}}";
+           alert(msg)
+        </script>
+    </body>
+</html>
