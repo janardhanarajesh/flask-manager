@@ -7,16 +7,16 @@ const_key=b'1AZvA_UuJ2ih3Zz0FxTxAV0qH7ZZWhZybQ3UhVE2ekU='
 client=MongoClient("mongodb+srv://janardhanarajesh2:6zWj8qTLoAfgqU9t@cluster0.2g0kyvu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 db=client["db"]
 collection=db["user"]
-ap=Flask(__name__)
-ap.secret_key="jklsdjklf"
+app=Flask(__name__)
+app.secret_key="jklsdjklf"
 CORS(ap)
-@ap.route("/")
+@app.route("/")
 def home():
     return render_template("index.html")
-@ap.route("/register")
+@app.route("/register")
 def reg():
     return render_template("register.html",msg="register with your details")
-@ap.route("/submit" ,methods=["post"])
+@app.route("/submit" ,methods=["post"])
 def submit():
     name=request.form["name"]
     unam=request.form["username"]
@@ -40,15 +40,15 @@ def submit():
             
 
     # print(name+"\n"+unam+"\n"+pas+"\n"+mail)
-@ap.route("/forgot")
+@app.route("/forgot")
 def forgot():
      return render_template("forgot.html")
-@ap.route("/login")
+@app.route("/login")
 def login():
     if session.get("name"):
         session.pop("name")
     return render_template("login.html",msg="login wit our details") 
-@ap.route("/check",methods=["post"])
+@app.route("/check",methods=["post"])
 def chec():
     name=request.form["uname"]
     session["name"]=name
@@ -58,7 +58,7 @@ def chec():
         return (render_template("user.html",name=name,msg=f"hello ,{name}"))
     else:
         return render_template("login.html",msg="invalid username or password")
-@ap.route("/user",methods=["post"])
+@app.route("/user",methods=["post"])
 def user():
     name=session.get("name")
     if name:
@@ -92,10 +92,8 @@ def user():
                 return render_template("user.html",msg="try again")
     else:
         return render_template("login.html",msg="you have to login")
-from flask import render_template, session
-from cryptography.fernet import Fernet
 
-@ap.route("/passes")
+@app.route("/passes")
 def passes():
     try:
         const_key = b'1AZvA_UuJ2ih3Zz0FxTxAV0qH7ZZWhZybQ3UhVE2ekU='
@@ -124,7 +122,7 @@ def passes():
         print(f"Error in /passes route: {e}")
         return render_template("password.html", msg="An unexpected error occurred")
 
-@ap.route("/updat",methods=["post"])
+@app.route("/updat",methods=["post"])
 def update():
     try:
         
@@ -145,7 +143,7 @@ def update():
         return redirect(url_for("ter"))
     else:
         return render_template("update.html",msg="try again")
-@ap.route("/update",methods=["post"])
+@app.route("/update",methods=["post"])
 def updat():
     user=session["name"]
     website=request.form["wb"]
@@ -162,7 +160,7 @@ def updat():
     #     return render_template("update.html",msg="updated")
     # else:
     return render_template("update.html",website=website,url=url,password=password,discription=discription,msg="update your passwords")
-@ap.route("/logout")
+@app.route("/logout")
 def logout():
     try:
         if session.get("name"):
@@ -170,7 +168,7 @@ def logout():
         return render_template("login.html")
     except Exception as e:
         return render_template("login.html")
-@ap.route("/password")
+@app.route("/password")
 def ter():
     return redirect(url_for("passes"))
 
