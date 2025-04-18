@@ -9,7 +9,7 @@ db=client["db"]
 collection=db["user"]
 app=Flask(__name__)
 app.secret_key="jklsdjklf"
-CORS(ap)
+CORS(app)
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -173,4 +173,4 @@ def ter():
     return redirect(url_for("passes"))
 
 if __name__=="__main__":
-    ap.run(debug=True)
+    app.run(debug=True)
